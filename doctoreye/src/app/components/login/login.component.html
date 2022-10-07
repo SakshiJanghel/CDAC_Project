@@ -1,0 +1,128 @@
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <h1>Doctor Eye</h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a> -->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="../mainpage">Home</a></li>
+          <li><a class="nav-link scrollto" href="../mainpage#about">About</a></li>
+          <li><a class="nav-link scrollto" href="../mainpage#features">Features</a></li>
+          <li><a class="nav-link scrollto" href="../mainpage#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="../mainpage#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="../mainpage#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Welcome</h2>
+          <ol>
+            <li><a href="../mainpage">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                  <p class="lead fw-normal mb-0 me-3"></p>
+                  
+                </div>
+      
+                <div class="divider d-flex align-items-center my-4">
+                  <p class="text-center fw-bold mx-3 mb-0">LOGIN</p>
+                </div>
+      
+                <!-- Email input -->
+                <div class="form-group">
+                  <input  type="email" id="email" class="form-control" formControlName="email" name="email"
+                    placeholder="Enter a valid email address" />
+                  <label class="form-label" for="form3Example3">Email address</label>
+                </div>
+      
+                <!-- Password input -->
+                <div class="form-group">
+                  <input type="password" id="password"  class="form-control" formControlName="password" name="password" 
+                    placeholder="Enter password" />
+                  <label class="form-label" for="form3Example4">Password</label>
+                </div>
+      
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-0">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                    <label class="form-check-label" for="form2Example3">
+                      Remember me
+                    </label>
+                  </div>
+                  <a routerLink="../forgot-password" class="text-body">Forgot password?</a>
+                </div>
+      
+                
+                  <button type="submit" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;" >Login</button>
+                    <!-- <input type="submit" class="btn btn-primary w-100" value="Login" name="">  -->
+                
+      
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+<!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-lg-start text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>CDAC</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Avilon
+          -->
+            Designed by CDAC
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="#intro" class="scrollto">Home</a>
+            <a href="#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-chevron-up"></i></a>

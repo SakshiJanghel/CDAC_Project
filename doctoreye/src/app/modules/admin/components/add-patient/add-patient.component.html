@@ -1,0 +1,113 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="IncubatorNo">IncubatorNo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="IncubatorNo"
+            required
+            [(ngModel)]="patient.IncubatorNo"
+            name="IncubatorNo"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="PatientName">Patient Name</label>
+          <input
+            class="form-control"
+            id="PatientName"
+            required
+            [(ngModel)]="patient.PatientName"
+            name="PatientName"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="FatherName">Father Name</label>
+            <input
+              class="form-control"
+              id="FatherName"
+              required
+              [(ngModel)]="patient.FatherName"
+              name="FatherName"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="MotherName">Mother Name</label>
+            <input
+              class="form-control"
+              id="MotherName"
+              required
+              [(ngModel)]="patient.MotherName"
+              name="MotherName"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="ParentContactNo">Parent Contact-No</label>
+            <input
+              class="form-control"
+              id="ParentContactNo"
+              required
+              [(ngModel)]="patient.ParentContactNo"
+              name="ParentContactNo"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="PatientBloodGroup">Patient Blood-Group</label>
+            <input
+              class="form-control"
+              id="PPatientBloodGroup"
+              required
+              [(ngModel)]="patient.PatientBloodGroup"
+              name="PatientBloodGroup"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="PPatientDiagnosis">Patient Diagnosis</label>
+            <input
+              class="form-control"
+              id="PatientDiagnosis"
+              required
+              [(ngModel)]="patient.PatientDiagnosis"
+              name="PatientDiagnosis"
+            />
+            </div>
+
+          <div class="form-group">
+            <label for="PatientPrecipitation">Patient Precipitation</label>
+            <input
+              class="form-control"
+              id="PatientPrecipitation"
+              required
+              [(ngModel)]="patient.PatientPrecipitation"
+              name="PPatientPrecipitation"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="PatientDoctorName">Patient Doctor Name</label>
+            <input
+              class="form-control"
+              id="PatientDoctorName"
+              required
+              [(ngModel)]="patient.PatientDoctorName"
+              name="PPatientPrecipitation"
+            />
+          </div>
+  
+        <button (click)="savePatient()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Patient was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newPatient()">Add</button>
+      </div>
+    </div>
+  </div>
+  

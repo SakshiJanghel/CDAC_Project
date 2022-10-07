@@ -1,0 +1,218 @@
+
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentPatient.id">
+          <h4>Patient</h4>
+          <div>
+            <label><strong>Incubator No : </strong></label> {{ currentPatient.IncubatorNo }}
+          </div>
+          <div>
+            <label><strong>Patient Name : </strong></label>
+            {{ currentPatient.PatientName}}
+          </div>
+          <div>
+            <label><strong>Father Name : </strong></label>
+            {{ currentPatient.FatherName}}
+          </div>
+          <div>
+            <label><strong>Mother Name : </strong></label>
+            {{ currentPatient.MotherName}}
+          </div>
+          <div>
+            <label><strong>Parent ContactNo : </strong></label>
+            {{ currentPatient.ParentContactNo}}
+          </div>
+          <div>
+            <label><strong>Patient BloodGroup : </strong></label>
+            {{ currentPatient.PatientBloodGroup}}
+          </div>
+          <div>
+            <label><strong>Patient Diagnosis : </strong></label>
+            {{ currentPatient.PatientDiagnosis}}
+          </div>
+          <div>
+            <label><strong>Patient Precipitation : </strong></label>
+            {{ currentPatient.PatientPrecipitation}}
+          </div>
+          <div>
+            <label><strong>Patient Doctor Name : </strong></label>
+            {{ currentPatient.PatientDoctorName}}
+          </div>
+
+        <div class="card-body">
+           <!-- <ul>
+            <li routerLinkActive="active">
+                <a routerLink="./dashboard">Dashboard
+                </a>
+            </li>
+        </ul>  -->
+    
+         <a class="btn btn-primary" routerLink="/dashboard">Dashboard</a>   
+      </div>
+       
+        </div>
+      
+        <div *ngIf="!currentPatient">
+          <br />
+          <p>Please click on a Patient...</p>
+        </div>
+      </div>
+    
+    <ng-template #editable>
+      <div *ngIf="currentPatient.id" class="edit-form">
+        <h4>Patient</h4>
+        <form>
+          <div class="form-group">
+            <label for="IncubatorNo">Incubator No</label>
+            <input
+              type="text"
+              class="form-control"
+              id="IncubatorNo"
+              [(ngModel)]="currentPatient.IncubatorNo"
+              name="IncubatorNo"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="PatientName">Patient Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="specialization"
+              [(ngModel)]="currentPatient.PatientName"
+              name="PatientName"
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="FatherName">Father Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="specialization"
+              [(ngModel)]="currentPatient.FatherName"
+              name="FatherName"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="MotherName">Mother Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="MotherName"
+              [(ngModel)]="currentPatient.MotherName"
+              name="MotherName"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="ParentContactNo">Parent Contact-No</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ParentContactNo"
+              [(ngModel)]="currentPatient.ParentContactNo"
+              name="ParentContactNo"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="PatientBloodGroup">Patient Blood-Group</label>
+            <input
+              type="text"
+              class="form-control"
+              id="PatientBloodGroup"
+              [(ngModel)]="currentPatient.PatientBloodGroup"
+              name="PatientBloodGroup"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="PatientDiagnosis">Patient Diagnosis</label>
+            <input
+              type="text"
+              class="form-control"
+              id="PatientDiagnosis"
+              [(ngModel)]="currentPatient.PatientDiagnosis"
+              name="PatientDiagnosis"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="PatientPrecipitation">Patient Precipitation</label>
+            <input
+              type="text"
+              class="form-control"
+              id="PatientPrecipitation"
+              [(ngModel)]="currentPatient.PatientPrecipitation"
+              name="PatientPrecipitation"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="PatientDoctorName">Patient Doctor Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="PatientDoctorName"
+              [(ngModel)]="currentPatient.PatientDoctorName"
+              name="PatientDoctorName"
+            />
+          </div>
+    
+          <div class="form-group">
+            <label><strong>Status:</strong></label>
+            {{ currentPatient.published ? "Published" : "Pending" }}
+          </div>
+        </form>
+    
+        <div class ="form-group">
+          <button
+          class="badge badge-primary mr-2"
+          *ngIf="currentPatient.published"
+          (click)="updatePublished(false)"
+          >
+          UnPublish
+          </button>
+        </div>
+          
+        <div class ="form-group">
+          <button
+          *ngIf="!currentPatient.published"
+          class="badge badge-primary mr-2"
+          (click)="updatePublished(true)"
+        >
+          Publish
+        </button>  
+        </div>
+      
+        <div class ="form-group">
+          <button class="badge badge-danger mr-2" 
+          (click)="deletePatient()">
+            Delete
+          </button>
+        </div>
+      
+        <div class ="form-group">
+          <button
+            type="submit"
+            class="badge badge-success mb-2"
+            (click)="updatePatient()"
+          >
+            Update
+          </button>   
+        </div>
+        
+          <p>{{ message }}</p>
+
+       
+      
+      </div>
+    
+      <div *ngIf="!currentPatient.id">
+        <br />
+        <p>Cannot access this Patient...</p>
+      </div>
+  
+</ng-template>
+  

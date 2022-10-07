@@ -1,0 +1,47 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="doctor.name"
+            name="name"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="specialization">Specialization</label>
+          <input
+            class="form-control"
+            id="specialization"
+            required
+            [(ngModel)]="doctor.specialization"
+            name="specialization"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNo">Phone No</label>
+          <input
+            class="form-control"
+            id="phoneNo"
+            required
+            [(ngModel)]="doctor.phoneNo"
+            name="phoneNo"
+          />
+        </div>
+  
+        <button (click)="saveDoctor()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>doctor was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newDoctor()">Add</button>
+      </div>
+    </div>
+  </div>
+  
